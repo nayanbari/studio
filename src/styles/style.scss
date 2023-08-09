@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --service-header-height: 0px;
+    --is-sticky: 1;
+    --top: 0px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: white;
+    overflow-x: hidden;
+}
+
+h1 {
+    font-family: 'Comfortaa', cursive;
+}
+
+section {
+    position: relative;
+}
+
+canvas {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+}
+  
+.details {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+}
+  
+.ball-text {
+    position: fixed;
+    z-index: 2;
+    color: white;
+    font-size: 5rem;
+    text-align: center;
+    right: 50%;
+    bottom: 25%;
+    transform: translate(50%, 50%);
+}
+  
+@media screen and (max-width: 1024px) {
+    .ball-text {
+        font-size: 2rem;
+        right: 50%;
+        bottom: 25%;
+        transform: translate(50%, 50%);
+    }
+    h1 {
+        font-size: 2rem;
+    }
+}
+
+.services {
+    .service-header {
+        height: 108px;
+        position: sticky;
+        background-color: white;
+        border-top: 1px solid #141414;
+        padding: 0 2rem;
+    }
+    
+    .first {
+        top: 0;
+    }
+    .second {
+        top: calc(1 * 108px);
+    }
+    .third {
+        top: calc(2 * 108px);
+    }
+    .forth {
+        top: calc(3 * 108px);
+    }
+}
+
+.way {
+    height: 100vh;
+    background-image: url(https://static.wixstatic.com/media/14da3a_114a4a7b1634423da5602f9938b98df7~mv2.jpg/v1/fill/w_941,h_917,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/12.jpg);
+    background-position: center center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    .card{
+        position: sticky;
+        top: 0;
+    }
+}
+
+.contact{
+    height: 100vh;
+    background-color: #141414;
+}
