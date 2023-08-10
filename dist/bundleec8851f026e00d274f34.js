@@ -48,9 +48,54 @@ section {
 }
 
 canvas {
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover;
+  display: block;
+  vertical-align: bottom;
+}
+
+/* ---- particles.js container ---- */
+#particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #141414;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+/* ---- stats.js ---- */
+.count-particles {
+  background: #000022;
+  position: absolute;
+  top: 48px;
+  left: 0;
+  width: 80px;
+  color: #13E8E9;
+  font-size: 0.8em;
+  text-align: left;
+  text-indent: 4px;
+  line-height: 14px;
+  padding-bottom: 2px;
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: bold;
+}
+
+.js-count-particles {
+  font-size: 1.1em;
+}
+
+#stats,
+.count-particles {
+  -webkit-user-select: none;
+}
+
+#stats {
+  border-radius: 3px 3px 0 0;
+  overflow: hidden;
+}
+
+.count-particles {
+  border-radius: 0 0 3px 3px;
 }
 
 .details {
@@ -119,7 +164,7 @@ canvas {
 .contact {
   height: 100vh;
   background-color: #141414;
-}`, "",{"version":3,"sources":["webpack://./src/styles/style.scss"],"names":[],"mappings":"AAEA;EACI,4BAAA;EACA,cAAA;EACA,UAAA;AAAJ;;AAGA;EACI,SAAA;EACA,UAAA;EACA,sBAAA;AAAJ;;AAGA;EACI,iBAAA;EACA,kBAAA;AAAJ;;AAGA;EACI,iCAAA;AAAJ;;AAGA;EACI,kBAAA;AAAJ;;AAGA;EACI,YAAA;EACA,aAAA;EACA,iBAAA;AAAJ;;AAGA;EACI,iBAAA;EACA,aAAA;EACA,uBAAA;EACA,mBAAA;EACA,eAAA;AAAJ;;AAGA;EACI,eAAA;EACA,UAAA;EACA,YAAA;EACA,eAAA;EACA,kBAAA;EACA,UAAA;EACA,WAAA;EACA,8BAAA;AAAJ;;AAGA;EACI;IACI,eAAA;IACA,UAAA;IACA,WAAA;IACA,8BAAA;EAAN;EAEE;IACI,eAAA;EAAN;AACF;AAII;EACI,aAAA;EACA,gBAAA;EACA,uBAAA;EACA,6BAAA;EACA,eAAA;AAFR;AAKI;EACI,MAAA;AAHR;AAKI;EACI,UAAA;AAHR;AAKI;EACI,UAAA;AAHR;AAKI;EACI,UAAA;AAHR;;AAOA;EACI,aAAA;EACA,0KAAA;EACA,kCAAA;EACA,4BAAA;EACA,4BAAA;EACA,sBAAA;AAJJ;AAMI;EACI,gBAAA;EACA,MAAA;AAJR;;AAQA;EACI,aAAA;EACA,yBAAA;AALJ","sourcesContent":["@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');\r\n\r\n:root {\r\n    --service-header-height: 0px;\r\n    --is-sticky: 1;\r\n    --top: 0px;\r\n}\r\n\r\n* {\r\n    margin: 0;\r\n    padding: 0;\r\n    box-sizing: border-box;\r\n}\r\n\r\nbody {\r\n    background: white;\r\n    overflow-x: hidden;\r\n}\r\n\r\nh1 {\r\n    font-family: 'Comfortaa', cursive;\r\n}\r\n\r\nsection {\r\n    position: relative;\r\n}\r\n\r\ncanvas {\r\n    width: 100vw;\r\n    height: 100vh;\r\n    object-fit: cover;\r\n}\r\n  \r\n.details {\r\n    min-height: 100vh;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    font-size: 2rem;\r\n}\r\n  \r\n.ball-text {\r\n    position: fixed;\r\n    z-index: 2;\r\n    color: white;\r\n    font-size: 5rem;\r\n    text-align: center;\r\n    right: 50%;\r\n    bottom: 25%;\r\n    transform: translate(50%, 50%);\r\n}\r\n  \r\n@media screen and (max-width: 1024px) {\r\n    .ball-text {\r\n        font-size: 2rem;\r\n        right: 50%;\r\n        bottom: 25%;\r\n        transform: translate(50%, 50%);\r\n    }\r\n    h1 {\r\n        font-size: 2rem;\r\n    }\r\n}\r\n\r\n.services {\r\n    .service-header {\r\n        height: 108px;\r\n        position: sticky;\r\n        background-color: white;\r\n        border-top: 1px solid #141414;\r\n        padding: 0 2rem;\r\n    }\r\n    \r\n    .first {\r\n        top: 0;\r\n    }\r\n    .second {\r\n        top: calc(1 * 108px);\r\n    }\r\n    .third {\r\n        top: calc(2 * 108px);\r\n    }\r\n    .forth {\r\n        top: calc(3 * 108px);\r\n    }\r\n}\r\n\r\n.way {\r\n    height: 100vh;\r\n    background-image: url(https://static.wixstatic.com/media/14da3a_114a4a7b1634423da5602f9938b98df7~mv2.jpg/v1/fill/w_941,h_917,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/12.jpg);\r\n    background-position: center center;\r\n    background-attachment: fixed;\r\n    background-repeat: no-repeat;\r\n    background-size: cover;\r\n    \r\n    .card{\r\n        position: sticky;\r\n        top: 0;\r\n    }\r\n}\r\n\r\n.contact{\r\n    height: 100vh;\r\n    background-color: #141414;\r\n}"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/styles/style.scss"],"names":[],"mappings":"AAEA;EACI,4BAAA;EACA,cAAA;EACA,UAAA;AAAJ;;AAGA;EACI,SAAA;EACA,UAAA;EACA,sBAAA;AAAJ;;AAGA;EACI,iBAAA;EACA,kBAAA;AAAJ;;AAGA;EACI,iCAAA;AAAJ;;AAGA;EACI,kBAAA;AAAJ;;AASA;EACI,cAAA;EACA,sBAAA;AANJ;;AASE,qCAAA;AAEF;EACI,kBAAA;EACA,WAAA;EACA,YAAA;EACA,yBAAA;EAEA,4BAAA;EACA,sBAAA;EACA,4BAAA;AARJ;;AAWE,uBAAA;AAEF;EACI,mBAAA;EACA,kBAAA;EACA,SAAA;EACA,OAAA;EACA,WAAA;EACA,cAAA;EACA,gBAAA;EACA,gBAAA;EACA,gBAAA;EACA,iBAAA;EACA,mBAAA;EACA,yCAAA;EACA,iBAAA;AATJ;;AAYA;EACI,gBAAA;AATJ;;AAYA;;EAEI,yBAAA;AATJ;;AAYA;EACI,0BAAA;EACA,gBAAA;AATJ;;AAYA;EACI,0BAAA;AATJ;;AAYA;EACI,iBAAA;EACA,aAAA;EACA,uBAAA;EACA,mBAAA;EACA,eAAA;AATJ;;AAYA;EACI,eAAA;EACA,UAAA;EACA,YAAA;EACA,eAAA;EACA,kBAAA;EACA,UAAA;EACA,WAAA;EACA,8BAAA;AATJ;;AAYA;EACI;IACI,eAAA;IACA,UAAA;IACA,WAAA;IACA,8BAAA;EATN;EAWE;IACI,eAAA;EATN;AACF;AAaI;EACI,aAAA;EACA,gBAAA;EACA,uBAAA;EACA,6BAAA;EACA,eAAA;AAXR;AAcI;EACI,MAAA;AAZR;AAcI;EACI,UAAA;AAZR;AAcI;EACI,UAAA;AAZR;AAcI;EACI,UAAA;AAZR;;AAgBA;EACI,aAAA;EACA,0KAAA;EACA,kCAAA;EACA,4BAAA;EACA,4BAAA;EACA,sBAAA;AAbJ;AAeI;EACI,gBAAA;EACA,MAAA;AAbR;;AAiBA;EACI,aAAA;EACA,yBAAA;AAdJ","sourcesContent":["@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');\r\n\r\n:root {\r\n    --service-header-height: 0px;\r\n    --is-sticky: 1;\r\n    --top: 0px;\r\n}\r\n\r\n* {\r\n    margin: 0;\r\n    padding: 0;\r\n    box-sizing: border-box;\r\n}\r\n\r\nbody {\r\n    background: white;\r\n    overflow-x: hidden;\r\n}\r\n\r\nh1 {\r\n    font-family: 'Comfortaa', cursive;\r\n}\r\n\r\nsection {\r\n    position: relative;\r\n}\r\n\r\n// canvas {\r\n//     width: 100vw;\r\n//     height: 100vh;\r\n//     object-fit: cover;\r\n// }\r\n\r\ncanvas {\r\n    display: block;\r\n    vertical-align: bottom;\r\n}\r\n  \r\n  /* ---- particles.js container ---- */\r\n  \r\n#particles-js {\r\n    position: absolute;\r\n    width: 100%;\r\n    height: 100%;\r\n    background-color: #141414;\r\n    // background-image: url(\"\");\r\n    background-repeat: no-repeat;\r\n    background-size: cover;\r\n    background-position: 50% 50%;\r\n}\r\n  \r\n  /* ---- stats.js ---- */\r\n  \r\n.count-particles{\r\n    background: #000022;\r\n    position: absolute;\r\n    top: 48px;\r\n    left: 0;\r\n    width: 80px;\r\n    color: #13E8E9;\r\n    font-size: .8em;\r\n    text-align: left;\r\n    text-indent: 4px;\r\n    line-height: 14px;\r\n    padding-bottom: 2px;\r\n    font-family: Helvetica, Arial, sans-serif;\r\n    font-weight: bold;\r\n}\r\n\r\n.js-count-particles{\r\n    font-size: 1.1em;\r\n}\r\n\r\n#stats,\r\n    .count-particles{\r\n    -webkit-user-select: none;\r\n}\r\n\r\n#stats{\r\n    border-radius: 3px 3px 0 0;\r\n    overflow: hidden;\r\n}\r\n\r\n.count-particles{\r\n    border-radius: 0 0 3px 3px;\r\n}\r\n  \r\n.details {\r\n    min-height: 100vh;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    font-size: 2rem;\r\n}\r\n  \r\n.ball-text {\r\n    position: fixed;\r\n    z-index: 2;\r\n    color: white;\r\n    font-size: 5rem;\r\n    text-align: center;\r\n    right: 50%;\r\n    bottom: 25%;\r\n    transform: translate(50%, 50%);\r\n}\r\n  \r\n@media screen and (max-width: 1024px) {\r\n    .ball-text {\r\n        font-size: 2rem;\r\n        right: 50%;\r\n        bottom: 25%;\r\n        transform: translate(50%, 50%);\r\n    }\r\n    h1 {\r\n        font-size: 2rem;\r\n    }\r\n}\r\n\r\n.services {\r\n    .service-header {\r\n        height: 108px;\r\n        position: sticky;\r\n        background-color: white;\r\n        border-top: 1px solid #141414;\r\n        padding: 0 2rem;\r\n    }\r\n    \r\n    .first {\r\n        top: 0;\r\n    }\r\n    .second {\r\n        top: calc(1 * 108px);\r\n    }\r\n    .third {\r\n        top: calc(2 * 108px);\r\n    }\r\n    .forth {\r\n        top: calc(3 * 108px);\r\n    }\r\n}\r\n\r\n.way {\r\n    height: 100vh;\r\n    background-image: url(https://static.wixstatic.com/media/14da3a_114a4a7b1634423da5602f9938b98df7~mv2.jpg/v1/fill/w_941,h_917,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/12.jpg);\r\n    background-position: center center;\r\n    background-attachment: fixed;\r\n    background-repeat: no-repeat;\r\n    background-size: cover;\r\n    \r\n    .card{\r\n        position: sticky;\r\n        top: 0;\r\n    }\r\n}\r\n\r\n.contact{\r\n    height: 100vh;\r\n    background-color: #141414;\r\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -648,71 +693,312 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _styles_style_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles/style.scss */ "./src/styles/style.scss");
 
-var canvas = document.querySelector(".canvas");
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-var context = canvas.getContext("2d");
-var frameCount = 179;
-var currentFrame = function currentFrame(index) {
-  return "./assets/ball/".concat((index + 1).toString(), ".jpg");
-};
-var images = [];
-var ball = {
-  frame: 0
-};
-for (var i = 0; i < frameCount; i++) {
-  var img = new Image();
-  img.src = currentFrame(i);
-  console.log(currentFrame(i));
-  images.push(img);
-}
-gsap.to(ball, {
-  frame: frameCount - 1,
-  snap: "frame",
-  ease: "none",
-  scrollTrigger: {
-    scrub: 0.5,
-    pin: "canvas",
-    end: "500%"
-  },
-  onUpdate: render
-});
-gsap.fromTo(".ball-text", {
-  opacity: 0
-}, {
-  opacity: 1,
-  scrollTrigger: {
-    scrub: 1,
-    start: "50%",
-    end: "60%"
-  },
-  onComplete: function onComplete() {
-    gsap.to(".ball-text", {
-      opacity: 0
-    });
-  }
-});
-images[0].onload = render;
-function render() {
-  context.canvas.width = images[0].width;
-  context.canvas.height = images[0].height;
-  context.clearRect(0, 0, canvas.width, canvas.height);
-  context.drawImage(images[ball.frame], 0, 0);
-}
+
+// const canvas = document.querySelector(".canvas");
+// canvas.width = window.innerWidth;
+// canvas.height = window.innerHeight;
+
+// const context = canvas.getContext("2d");
+// const frameCount = 179;
+
+// const currentFrame = (index) => `./assets/ball/${(index + 1).toString()}.jpg`;
+
+// const images = [];
+// let ball = { frame: 0 };
+
+// for (let i = 0; i < frameCount; i++) {
+//   const img = new Image();
+//   img.src = currentFrame(i);
+//   console.log(currentFrame(i));
+//   images.push(img);
+// }
+
+// gsap.to(ball, {
+//   frame: frameCount - 1,
+//   snap: "frame",
+//   ease: "none",
+//   scrollTrigger: {
+//     scrub: 0.5,
+//     pin: "canvas",
+//     end: "500%",
+//   },
+//   onUpdate: render,
+// });
+
+// gsap.fromTo(
+//   ".ball-text",
+//   {
+//     opacity: 0,
+//   },
+//   {
+//     opacity: 1,
+//     scrollTrigger: {
+//       scrub: 1,
+
+//       start: "50%",
+//       end: "60%",
+//     },
+//     onComplete: () => {
+//       gsap.to(".ball-text", { opacity: 0 });
+//     },
+//   }
+// );
+
+// images[0].onload = render;
+
+// function render() {
+//   context.canvas.width = images[0].width;
+//   context.canvas.height = images[0].height;
+
+//   context.clearRect(0, 0, canvas.width, canvas.height);
+//   context.drawImage(images[ball.frame], 0, 0);
+// }
 
 // smooth scroll
 
-var lenis = new Lenis();
-lenis.on('scroll', function (e) {
-  console.log(e);
+// const lenis = new Lenis()
+
+// lenis.on('scroll', (e) => {
+//     console.log(e)
+// })
+
+// function raf(time) {
+//     lenis.raf(time)
+//     requestAnimationFrame(raf)
+// }
+
+// requestAnimationFrame(raf)
+
+/**
+ * @author mrdoob / http://mrdoob.com/
+ */
+
+var Stats = function Stats() {
+  var startTime = Date.now(),
+    prevTime = startTime;
+  var ms = 0,
+    msMin = Infinity,
+    msMax = 0;
+  var fps = 0,
+    fpsMin = Infinity,
+    fpsMax = 0;
+  var frames = 0,
+    mode = 0;
+  var container = document.createElement('div');
+  container.id = 'stats';
+  container.addEventListener('mousedown', function (event) {
+    event.preventDefault();
+    setMode(++mode % 2);
+  }, false);
+  container.style.cssText = 'width:80px;opacity:0.9;cursor:pointer';
+  var fpsDiv = document.createElement('div');
+  fpsDiv.id = 'fps';
+  fpsDiv.style.cssText = 'padding:0 0 3px 3px;text-align:left;background-color:#002';
+  container.appendChild(fpsDiv);
+  var fpsText = document.createElement('div');
+  fpsText.id = 'fpsText';
+  fpsText.style.cssText = 'color:#0ff;font-family:Helvetica,Arial,sans-serif;font-size:9px;font-weight:bold;line-height:15px';
+  fpsText.innerHTML = 'FPS';
+  fpsDiv.appendChild(fpsText);
+  var fpsGraph = document.createElement('div');
+  fpsGraph.id = 'fpsGraph';
+  fpsGraph.style.cssText = 'position:relative;width:74px;height:30px;background-color:#0ff';
+  fpsDiv.appendChild(fpsGraph);
+  while (fpsGraph.children.length < 74) {
+    var bar = document.createElement('span');
+    bar.style.cssText = 'width:1px;height:30px;float:left;background-color:#113';
+    fpsGraph.appendChild(bar);
+  }
+  var msDiv = document.createElement('div');
+  msDiv.id = 'ms';
+  msDiv.style.cssText = 'padding:0 0 3px 3px;text-align:left;background-color:#020;display:none';
+  container.appendChild(msDiv);
+  var msText = document.createElement('div');
+  msText.id = 'msText';
+  msText.style.cssText = 'color:#0f0;font-family:Helvetica,Arial,sans-serif;font-size:9px;font-weight:bold;line-height:15px';
+  msText.innerHTML = 'MS';
+  msDiv.appendChild(msText);
+  var msGraph = document.createElement('div');
+  msGraph.id = 'msGraph';
+  msGraph.style.cssText = 'position:relative;width:74px;height:30px;background-color:#0f0';
+  msDiv.appendChild(msGraph);
+  while (msGraph.children.length < 74) {
+    var bar = document.createElement('span');
+    bar.style.cssText = 'width:1px;height:30px;float:left;background-color:#131';
+    msGraph.appendChild(bar);
+  }
+  var setMode = function setMode(value) {
+    mode = value;
+    switch (mode) {
+      case 0:
+        fpsDiv.style.display = 'block';
+        msDiv.style.display = 'none';
+        break;
+      case 1:
+        fpsDiv.style.display = 'none';
+        msDiv.style.display = 'block';
+        break;
+    }
+  };
+  var updateGraph = function updateGraph(dom, value) {
+    var child = dom.appendChild(dom.firstChild);
+    child.style.height = value + 'px';
+  };
+  return {
+    REVISION: 12,
+    domElement: container,
+    setMode: setMode,
+    begin: function begin() {
+      startTime = Date.now();
+    },
+    end: function end() {
+      var time = Date.now();
+      ms = time - startTime;
+      msMin = Math.min(msMin, ms);
+      msMax = Math.max(msMax, ms);
+      msText.textContent = ms + ' MS (' + msMin + '-' + msMax + ')';
+      updateGraph(msGraph, Math.min(30, 30 - ms / 200 * 30));
+      frames++;
+      if (time > prevTime + 1000) {
+        fps = Math.round(frames * 1000 / (time - prevTime));
+        fpsMin = Math.min(fpsMin, fps);
+        fpsMax = Math.max(fpsMax, fps);
+        fpsText.textContent = fps + ' FPS (' + fpsMin + '-' + fpsMax + ')';
+        updateGraph(fpsGraph, Math.min(30, 30 - fps / 100 * 30));
+        prevTime = time;
+        frames = 0;
+      }
+      return time;
+    },
+    update: function update() {
+      startTime = this.end();
+    }
+  };
+};
+particlesJS("particles-js", {
+  "particles": {
+    "number": {
+      "value": 100,
+      "density": {
+        "enable": true,
+        "value_area": 800
+      }
+    },
+    "color": {
+      "value": "#00d0ff"
+    },
+    "shape": {
+      "type": "circle",
+      "stroke": {
+        "width": 1,
+        "color": "#00d0ff"
+      },
+      "polygon": {
+        "nb_sides": 5
+      },
+      "image": {
+        "src": "img/github.svg",
+        "width": 100,
+        "height": 100
+      }
+    },
+    "opacity": {
+      "value": 0.5,
+      "random": false,
+      "anim": {
+        "enable": false,
+        "speed": 1,
+        "opacity_min": 0.1,
+        "sync": false
+      }
+    },
+    "size": {
+      "value": 3,
+      "random": true,
+      "anim": {
+        "enable": false,
+        "speed": 40,
+        "size_min": 0.1,
+        "sync": false
+      }
+    },
+    "line_linked": {
+      "enable": true,
+      "distance": 150,
+      "color": "#00d0ff",
+      "opacity": 0.4,
+      "width": 1
+    },
+    "move": {
+      "enable": true,
+      "speed": 6,
+      "direction": "none",
+      "random": false,
+      "straight": false,
+      "out_mode": "out",
+      "bounce": false,
+      "attract": {
+        "enable": false,
+        "rotateX": 600,
+        "rotateY": 1200
+      }
+    }
+  },
+  "interactivity": {
+    "detect_on": "canvas",
+    "events": {
+      "onhover": {
+        "enable": true,
+        "mode": "grab"
+      },
+      "onclick": {
+        "enable": true,
+        "mode": "push"
+      },
+      "resize": true
+    },
+    "modes": {
+      "grab": {
+        "distance": 140,
+        "line_linked": {
+          "opacity": 1
+        }
+      },
+      "bubble": {
+        "distance": 400,
+        "size": 40,
+        "duration": 2,
+        "opacity": 8,
+        "speed": 3
+      },
+      "repulse": {
+        "distance": 200,
+        "duration": 0.4
+      },
+      "push": {
+        "particles_nb": 4
+      },
+      "remove": {
+        "particles_nb": 2
+      }
+    }
+  },
+  "retina_detect": true
 });
-function raf(time) {
-  lenis.raf(time);
-  requestAnimationFrame(raf);
-}
-requestAnimationFrame(raf);
+
+/* ---- stats.js config ---- */
+
+var count_particles, stats, _update;
+stats = new Stats();
+stats.setMode(0);
+_update = function update() {
+  stats.begin();
+  stats.end();
+  requestAnimationFrame(_update);
+};
+requestAnimationFrame(_update);
 })();
 
 /******/ })()
 ;
-//# sourceMappingURL=bundle65829e95c849febd85f1.js.map
+//# sourceMappingURL=bundleec8851f026e00d274f34.js.map
